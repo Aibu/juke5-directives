@@ -4,7 +4,7 @@ juke.directive('songTable', function(PlayerFactory){
     scope: {
       songs: '='
     },
-    link: function(scope){
+    link: function(scope, element){
       scope.getCurrentSong = PlayerFactory.getCurrentSong;
 
       scope.isPlaying = PlayerFactory.isPlaying;
@@ -25,12 +25,14 @@ juke.directive('songTable', function(PlayerFactory){
 
 juke.directive('doubleClick', function () {
   return {
-    scope: {
-      doubleClick: '&'
-    },
+    restrict: 'A',
+    // scope: {
+    //   doubleClick: '&'
+    // },
     link: function (scope, element) {
       element.on('dblclick', function(){
-        scope.doubleClick();
+        scope.toggle(scope.song);
+        // scope.doubleClick();
       })
     }
   }

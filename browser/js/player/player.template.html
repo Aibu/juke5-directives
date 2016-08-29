@@ -1,5 +1,5 @@
 <div ng-show="getCurrentSong()">
-  <footer >
+  <footer>
     <div>
       <div class="pull-left">
         <button class="btn btn-default" ng-click="previous()">
@@ -12,10 +12,13 @@
           <span class="glyphicon glyphicon-step-forward"></span>
         </button>
       </div>
-      <div class="bar">
+      <div class="bar pull-left" style="width: 60%">
         <div class="progress" ng-click="handleProgressClick($event)">
           <div class="progress-bar" ng-style="{width: getPercent() + '%'}"></div>
         </div>
+      </div>
+      <div class="pull-right" style="line-height:56px">
+        <p>{{getCurrentSong().name}}</p>
       </div>
     </div>
   </footer>
