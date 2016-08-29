@@ -21,3 +21,17 @@ juke.directive('songTable', function(PlayerFactory){
     }
   }
 });
+
+
+juke.directive('doubleClick', function () {
+  return {
+    scope: {
+      doubleClick: '&'
+    },
+    link: function (scope, element) {
+      element.on('dblclick', function(){
+        scope.doubleClick();
+      })
+    }
+  }
+});

@@ -8,11 +8,11 @@
     </tr>
   </thead>
   <tbody>
-    <tr ng-repeat="song in songs" ng-class="{active: song === getCurrentSong() }">
+    <tr ng-repeat="song in songs" ng-class="{active: song === getCurrentSong() }" double-click="toggle(song)">
       <td>
-        <button class="btn btn-default btn-xs" ng-click="toggle(song)">
+<!--         <button class="btn btn-default btn-xs" ng-click="toggle(song)">
           <span class="glyphicon" ng-class="{ 'glyphicon-pause': isPlaying(song), 'glyphicon-play': !isPlaying(song) }"></span>
-        </button>
+        </button> -->
       </td>
       <td>{{ song.name }}</td>
       <td><span ng-repeat="artist in song.artists">{{ artist.name }}{{ $last ? '' : ', ' }}</span></td>
